@@ -19,7 +19,6 @@ def search():
     error = ''
      
     q = request.args.get('q')
-    print(q)
 
     if q != '' and q != None:
 
@@ -102,18 +101,3 @@ def unicode(codepoint):
     result['class'] = unicodedata.bidirectional(result['character'])
 
     return render_template('unicode.html', result=result)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
