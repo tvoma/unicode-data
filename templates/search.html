@@ -1,0 +1,70 @@
+<!doctype html>
+<title>UnicodeData - Recherche</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='bulma.min.css') }}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div class="container">
+
+	<nav class="breadcrumb has-bullet-separator" aria-label="breadcrumbs">
+	  	<ul>
+		    <li><a href="{{ url_for('index') }}">Accueil</a></li>
+		    <li class="is-active"><a href="#" aria-current="page">Recherche</a></li>
+		</ul>
+	</nav>
+
+</div>
+
+<section class="hero is-primary is-bold">
+  	<div class="hero-body">
+    	<div class="container">
+    		<h1 class="title is-1">Recherche</h1>
+
+			<form method="get" class="field has-addons">
+				
+				<div class="control is-expanded">
+					<input class="input is-primary" type="text" name="q" placeholder="Votre recherche...">
+				</div>
+
+				<div class="control">
+					<input type="submit" class="button is-primary" value="Rechercher">
+				</div>
+
+			</form>
+    	</div>
+  	</div>
+</section>
+
+<div class="container">
+
+	{% if error %}
+		<div class="notification is-light is-expanded">{{ error }}</div>
+	{% endif %}
+
+	{% if results %}
+		<table class="table is-fullwidth is-narrow">
+
+			<tbody>
+				<tr>
+					<th>Codepoint</th>
+					<th>Nom</th>
+					<th>Caractère</th>
+					<th></th>
+				</tr>
+				{% for r in results %}
+			
+					<tr>
+						<td>{{ r.codepoint }}</td>
+						<td>{{ r.name }}</td>
+						<td>{{ r.character }}</td>
+						<td><a class="button is-primary" href="{{ url_for('unicode', codepoint=r.codepoint) }}">Plus</a></td>
+					</tr>
+				
+				{% endfor %}
+			</tbody>
+
+		</table>
+	{% endif %}
+		
+
+</div>

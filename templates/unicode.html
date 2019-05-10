@@ -1,0 +1,62 @@
+<!doctype html>
+<title>UnicodeData - Unicode {{ result.character }}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='bulma.min.css') }}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div class="container">
+
+  	<nav class="breadcrumb has-bullet-separator" aria-label="breadcrumbs">
+	  	<ul>
+		    <li><a href="{{ url_for('index') }}">Accueil</a></li>
+		    <li><a href="{{ url_for('search') }}">Recherche</a></li>
+		    <li class="is-active"><a href="#" aria-current="page">Caractère {{ result.codepoint }}</a></li>
+		</ul>
+	</nav>
+
+</div>
+
+<section class="hero is-primary is-bold">
+  	<div class="hero-body">
+    	<div class="container">
+
+    		<h1 class="title is-1">Caractère {{ result.codepoint }}</h1>
+
+    	</div>
+  	</div>
+</section>
+
+<div class="container">
+
+	<table class="table is-fullwidth is-narrow">
+		
+		<tbody>
+			<tr>
+				<td class="caract" colspan="2" rowspan="4">{{ result.character }}</td>
+				<td><b>Codepoint : </b>{{ result.codepoint }}</td>
+			</tr>
+			<tr>
+				<td><b>Nom : </b>{{ result.name }}</td>
+			</tr>
+			<tr>
+				<td><b>Catégorie : </b>{{ result.category }}</td>
+			</tr>
+			<tr>
+				<td><b>Classe : </b>{{ result.class }}</td>
+			</tr>
+			<tr>
+				<td colspan="3"><b>Hex : </b>{{ result.hex }}</td>
+			</tr>
+			<tr>
+				<td colspan="3"><b>Binaire : </b>{{ result.binary }}</td>
+			</tr>
+			<tr>
+				<td colspan="3"><b>Python Source code : </b>{{ result.pycode }}</td>
+			</tr>
+		</tbody>
+
+	</table>
+
+	<a class="button is-primary" href="{{ url_for('search') }}">Effectuer une nouvelle recherche</a>
+
+</div>

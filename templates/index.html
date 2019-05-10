@@ -1,0 +1,30 @@
+<!doctype html>
+<title>UnicodeData - Accueil</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='bulma.min.css') }}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div class="container" align="center">
+
+	<h1 class="title is-1 is-spaced">UnicodeData !</h1>
+
+</div>
+
+<section class="hero is-primary is-bold">
+  	<div class="hero-body">
+    	<div class="container">
+    		<h1 class="title">
+    			Kesako ?
+    		</h1>
+      		<h2 class="subtitle">
+        		UnicodeData utilise le module <b>‘unicodedata‘</b> de python et permet de faire une recherche sur un caractère, avec son caractère en lui même, son nom, son codepoint ou son hexadécimal (U+HEX)
+      		</h2>
+    	</div>
+  	</div>
+</section>
+
+<div class="container" align="center">
+	
+	<a class="button is-primary" href="/search">Faire une recherche</a>
+
+</div>
