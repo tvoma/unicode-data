@@ -48,7 +48,7 @@ def search():
                     codepoints.append(i)
 
         # codepoint from codepoint
-        elif q.isdigit() and int(len(q)) > 2:
+        elif q.isdigit() and int(len(q)) > 2 and int(len(q)) < 230000:
 
             try:
 
